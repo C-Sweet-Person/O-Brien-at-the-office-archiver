@@ -24,6 +24,8 @@ while active:
     text2 = text.find("p")
     if text2.decode_contents() == "<br/>":
         text2 = text2.find_next("p")
+    elif "kickstarter" in text2.decode_contents():
+        text2 = text2.find_next("p")
     text2 = text2.decode_contents().replace(":", '').replace("<br/>","").replace("?", "")
     #kickstarter usecases I guess
     if "kickstarter" in text2:
